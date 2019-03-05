@@ -1,6 +1,6 @@
 {
   "name": "lazy-styles-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generate shared styles based on layer name. Concept modelled from Styles Generator created by Luca Orio.",
   "engines": {
     "sketch": ">=3.0"
