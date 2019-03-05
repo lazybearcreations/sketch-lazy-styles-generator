@@ -3,13 +3,14 @@
     "bundleVersion": 1,
     "author": "Adam Bruzon",
     "name": "Lazy Styles Generator",
+    "icon": "LSG-icon.png",
     "identifier": "lazybearcreations.lazygen",
     "commands": [
         {
-            "name": "Generate",
+            "name": "Create / Update shared styles",
             "identifier": "lazybearcreations.lazygen.generate",
             "script": "./generate.js",
-            "description": "Programmatically generate Shared Styles based on the layers name",
+            "description": "Create or update shared styles based on the layers name.",
             "shortcut": "ctrl cmd g"
         }
     ],
