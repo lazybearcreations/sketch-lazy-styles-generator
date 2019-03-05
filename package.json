@@ -1,0 +1,33 @@
+{
+  "name": "lazy-styles-generator",
+  "version": "0.0.0",
+  "description": "Generate shared styles based on layer name. Concept modelled from Styles Generator created by Luca Orio.",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "lazy-styles-generator",
+    "manifest": "src/manifest.json",
+    "main": "lazy-styles-generator.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.2"
+  },
+  "author": "Adam Bruzon <adam@lbc.email>",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:lazybearcreations/sketch-lazy-styles-generator.git"
+  },
+  "dependencies": {
+    "skpm": "^1.1.9"
+  }
+}

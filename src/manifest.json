@@ -1,0 +1,22 @@
+{
+    "compatibleVersion": 3,
+    "bundleVersion": 1,
+    "author": "Adam Bruzon",
+    "name": "Lazy Styles Generator",
+    "identifier": "lazybearcreations.lazygen",
+    "commands": [
+        {
+            "name": "Generate",
+            "identifier": "lazybearcreations.lazygen.generate",
+            "script": "./generate.js",
+            "description": "Programmatically generate Shared Styles based on the layers name",
+            "shortcut": "ctrl cmd g"
+        }
+    ],
+    "menu": {
+        "title": "Lazy Styles Generator",
+        "items": [
+            "lazybearcreations.lazygen.generate"
+        ]
+    }
+}
