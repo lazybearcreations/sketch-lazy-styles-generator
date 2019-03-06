@@ -79,23 +79,29 @@ const generate = () => {
 
     const selectedLayers = document.selectedLayers;
 
-    console.log(document.sharedLayerStyles);
-
-    if (selectedLayers.isEmpty) {
-        message("No layers selected.");
-    } else {
-
-        selectedLayers.forEach((layer) => {
-            create(layer);
-        });
-
+    if (selectedLayers.length > 100) {
+        message(`You've selected ${selectedLayers.length} layers 😱 - It might take a few minutes!`);
     }
 
-    message(
-        "Styles created: " + (count.layers.created + count.text.created) +
-        "   |   " +
-        "Styles updated: " + (count.layers.updated + count.text.updated)
-    );
+    setTimeout(() => {
+
+        if (selectedLayers.isEmpty) {
+            message("No layers selected.");
+        } else {
+
+            selectedLayers.forEach((layer) => {
+                create(layer);
+            });
+
+        }
+
+        message(
+            "Styles created: " + (count.layers.created + count.text.created) +
+            "   |   " +
+            "Styles updated: " + (count.layers.updated + count.text.updated)
+        );
+
+    }, 100);
 
 }
 
