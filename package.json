@@ -1,7 +1,27 @@
 {
   "name": "lazy-styles-generator",
   "version": "3.1.0",
-  "description": "Generate shared styles based on layer name. Concept modelled from Styles Generator created by Luca Orio.",
+  "description": "Generate shared layer and text styles using the name of the selected layer as the name of the generated style.",
+  "homepage": "https://github.com/lazybearcreations/sketch-lazy-styles-generator#readme",
+  "keywords": [
+    "sketch",
+    "sketchapp",
+    "sketch 53",
+    "sketch 53.1",
+    "sketch 53.2",
+    "plugin",
+    "styles",
+    "shared styles",
+    "text styles",
+    "layer styles",
+    "generator",
+    "styles generator",
+    "lazybear creations"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lazybearcreations/sketch-lazy-styles-generator/issues"
+  },
   "engines": {
     "sketch": ">=3.0"
   },
