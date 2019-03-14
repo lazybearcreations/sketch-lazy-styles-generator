@@ -4,20 +4,36 @@
     "author": "Adam Bruzon",
     "name": "Lazy Styles Generator",
     "icon": "LSG-icon.png",
-    "identifier": "lazybearcreations.lazygen",
+    "identifier": "lazybearcreations.lazy-styles-generator",
     "commands": [
         {
-            "name": "Create / Update shared styles",
-            "identifier": "lazybearcreations.lazygen.generate",
-            "script": "./generate.js",
-            "description": "Create or update shared styles based on the layers name.",
-            "shortcut": "ctrl cmd g"
+            "name": "ALL shared styles",
+            "description": "Create or update shared text and layer styles based on the layers name.",
+            "identifier": "lazybearcreations.lazy-styles-generator.all",
+            "script": "./allStyles.js",
+            "shortcut": "ctrl alt cmd s"
+        },
+        {
+            "name": "Shared TEXT styles",
+            "description": "Create or update shared text styles named as the origin layer.",
+            "identifier": "lazybearcreations.lazy-styles-generator.text",
+            "script": "./textStyles.js",
+            "shortcut": "ctrl alt cmd t"
+        },
+        {
+            "name": "Shared LAYER styles",
+            "description": "Create or update shared layer styles based on the layers name.",
+            "identifier": "lazybearcreations.lazy-styles-generator.layer",
+            "script": "./layerStyles.js",
+            "shortcut": "ctrl alt cmd l"
         }
     ],
     "menu": {
         "title": "Lazy Styles Generator",
         "items": [
-            "lazybearcreations.lazygen.generate"
+            "lazybearcreations.lazy-styles-generator.all",
+            "lazybearcreations.lazy-styles-generator.text",
+            "lazybearcreations.lazy-styles-generator.layer"
         ]
     }
 }
