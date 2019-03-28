@@ -7,13 +7,13 @@ import * as Layer from './lib/Layer';
 import * as SharedStyle from './lib/SharedStyle';
 import * as Utils from './lib/Utils';
 
-export default (context) => {
+export default (contextNative) => {
 
-    const document = fromNative(context.document);
-    const documentData = context.document.documentData();
+    const document = fromNative(contextNative.document);
+    const documentDataNative = contextNative.document.documentData();
 
-    const selectedLayers = Layer.getSelectedLayers(context);
-    const selectedLayersCount = Layer.getSelectedLayersCount();
+    const selectedLayers = Layer.getSelectedLayers(contextNative);
+    const selectedLayersCount = Layer.getSelectedLayerCount(contextNative);
 
     if (selectedLayersCount === 0) {
         message("No layers selected. 🤨");
@@ -28,34 +28,34 @@ export default (context) => {
 
         selectedLayers.forEach(( layer ) => {
 
-            layer = fromNative(layer);
+            if (Layer.getLayerType(layer) === "Text") {
 
-            if (Layer.getLayerType(layer) == "Text") {
-
-                let sharedStyle = fromNative(documentData.textStyleWithID(layer.sharedStyleId));
+                let sharedStyle = SharedStyle.getSharedTextStyleById(layer.sharedStyleId, document);
+                // let sharedStyle = fromNative(documentDataNative.textStyleWithID(layer.sharedStyleId));
 
                 if (Layer.hasSharedStyle(layer)) {
-                    SharedStyle.updateStyle(layer, sharedStyle);
-                    Counter.updateCounter(1, 'updated');
+                    SharedStyle.updateStyle(sharedStyle, layer.style);
+                    Counter.updateCounter('updated', 1);
                     return;
                 }
 
                 SharedStyle.addTextStyle(document, layer);
-                Counter.updateCounter(1, 'created');
+                Counter.updateCounter('created', 1);
                 return;
 
             } else if (Layer.getLayerType(layer) == "ShapePath") {
 
-                let sharedStyle = fromNative(documentData.layerStyleWithID(layer.sharedStyleId));
+                let sharedStyle = SharedStyle.getSharedShapeStyleById(layer.sharedStyleId, document);
+                // let sharedStyle = fromNative(documentDataNative.layerStyleWithID(layer.sharedStyleId));
 
                 if (Layer.hasSharedStyle(layer)) {
-                    SharedStyle.updateStyle(layer, sharedStyle);
-                    Counter.updateCounter(1, 'updated');
+                    SharedStyle.updateStyle(sharedStyle, layer.style);
+                    Counter.updateCounter('updated', 1);
                     return;
                 }
 
-                SharedStyle.addLayerStyle(document, layer);
-                Counter.updateCounter(1, 'created');
+                SharedStyle.addShapeStyle(document, layer);
+                Counter.updateCounter('created', 1);
                 return;
             }
 
