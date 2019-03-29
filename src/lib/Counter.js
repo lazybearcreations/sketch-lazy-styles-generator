@@ -4,15 +4,15 @@ let Counters = {
     skipped: 0
 };
 
-const updateCounter = ( type, increment ) => {
-    return Counters[type] += increment;
-}
-
 const getCount = ( type ) => {
     return Counters[type];
 }
 
+const updateCounter = ( type, increment ) => {
+    return Counters[type] += increment;
+}
+
 export {
-    updateCounter,
-    getCount
+    getCount,
+    updateCounter
 }

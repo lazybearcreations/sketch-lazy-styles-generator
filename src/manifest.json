@@ -7,33 +7,50 @@
     "identifier": "lazybearcreations.lazy-styles-generator",
     "commands": [
         {
-            "name": "ALL shared styles",
+            "name": "Create ALL shared styles",
             "description": "Create or update shared text and layer styles based on the layers name.",
-            "identifier": "lazybearcreations.lazy-styles-generator.all",
-            "script": "./allStyles.js",
+            "identifier": "lazybearcreations.lazy-styles-generator.createAll",
+            "script": "./createAllStyles.js",
             "shortcut": "ctrl alt cmd s"
         },
         {
-            "name": "Shared TEXT styles",
+            "name": "Create shared TEXT styles",
             "description": "Create or update shared text styles named as the origin layer.",
-            "identifier": "lazybearcreations.lazy-styles-generator.text",
-            "script": "./textStyles.js",
+            "identifier": "lazybearcreations.lazy-styles-generator.createText",
+            "script": "./createTextStyles.js",
             "shortcut": "ctrl alt cmd t"
         },
         {
-            "name": "Shared LAYER styles",
+            "name": "Create shared LAYER styles",
             "description": "Create or update shared layer styles based on the layers name.",
-            "identifier": "lazybearcreations.lazy-styles-generator.layer",
-            "script": "./layerStyles.js",
+            "identifier": "lazybearcreations.lazy-styles-generator.createShape",
+            "script": "./createShapeStyles.js",
             "shortcut": "ctrl alt cmd l"
+        },
+        {
+            "name": "Remove ALL TEXT styles",
+            "description": "Delete ALL text styles from the document.",
+            "identifier": "lazybearcreations.lazy-styles-generator.removeText",
+            "script": "./removeAllTextStyles.js",
+            "shortcut": "ctrl alt cmd r t"
+        },
+        {
+            "name": "Remove ALL LAYER styles",
+            "description": "Delete ALL layer styles from the document.",
+            "identifier": "lazybearcreations.lazy-styles-generator.removeShape",
+            "script": "./removeAllShapeStyles.js",
+            "shortcut": "ctrl alt cmd r s"
         }
     ],
     "menu": {
         "title": "Lazy Styles Generator",
         "items": [
-            "lazybearcreations.lazy-styles-generator.all",
-            "lazybearcreations.lazy-styles-generator.text",
-            "lazybearcreations.lazy-styles-generator.layer"
+            "lazybearcreations.lazy-styles-generator.createAll",
+            "lazybearcreations.lazy-styles-generator.createText",
+            "lazybearcreations.lazy-styles-generator.createShape",
+            "-",
+            "lazybearcreations.lazy-styles-generator.removeText",
+            "lazybearcreations.lazy-styles-generator.removeShape"
         ]
     }
 }
