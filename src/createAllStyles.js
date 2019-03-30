@@ -1,7 +1,7 @@
 import { fromNative } from 'sketch';
 import { message } from 'sketch/ui';
-import { exclamations } from './lib/Constants';
 
+import * as Constants from './lib/Constants';
 import * as Counter from './lib/Counter';
 import * as Layer from './lib/Layer';
 import * as SharedStyle from './lib/SharedStyle';
@@ -17,20 +17,22 @@ export default (contextNative) => {
 
     const sharedStyles = SharedStyle.getSharedStyles(document, true);
 
-    if (selectedLayersCount === 0) {
+    if (selectedLayersCount == 0) {
         message("No layers selected. 🤨");
+        NSSound.soundNamed(Constants.systemSounds.Basso).play();
         return;
     }
 
-    if (selectedLayersCount > 100) {
+    if (selectedLayersCount > 99) {
         message(`You've selected ${selectedLayersCount} layers 😱 - It might take a few minutes!`);
+        NSSound.soundNamed(Constants.systemSounds.Blow).play();
     }
 
     setTimeout(() => {
 
         selectedLayers.forEach(( layer ) => {
 
-            if (Layer.getLayerType(layer) === "Text") {
+            if (Layer.getLayerType(layer) == "Text") {
 
                 let sharedStyle = SharedStyle.getSharedTextStyleById(layer.sharedStyleId, document);
 
@@ -62,12 +64,13 @@ export default (contextNative) => {
         });
 
         message(
-            `${exclamations[Utils.getRandomInt(exclamations.length - 1)]}! 🙌` +
+            `${Constants.exclamations[Utils.getRandomInt(Constants.exclamations.length - 1)]}! 🙌` +
             "   |   " +
             `Styles created: ${Counter.getCount('created')}` +
             "   |   " +
             `Styles updated: ${Counter.getCount('updated')}`
         );
+        NSSound.soundNamed(Constants.systemSounds.Glass).play();
 
     }, 100);
 

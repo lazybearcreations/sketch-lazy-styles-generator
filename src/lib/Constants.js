@@ -123,6 +123,24 @@ const exclamations = [
     "Ziggety-damn"
 ];
 
+const systemSounds = {
+    Basso: "Basso",
+    Blow: "Blow",
+    Bottle: "Bottle",
+    Frog: "Frog",
+    Funk: "Funk",
+    Glass: "Glass",
+    Hero: "Hero",
+    Morse: "Morse",
+    Ping: "Ping",
+    Pop: "Pop",
+    Purr: "Purr",
+    Sosumi: "Sosumi",
+    Submarine: "Submarine",
+    Tink: "Tink"
+};
+
 export {
-    exclamations
+    exclamations,
+    systemSounds
 }

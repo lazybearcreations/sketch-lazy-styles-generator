@@ -31,7 +31,6 @@ const getSharedTextStyles = (document, fromSource) => {
 const getSharedStyles = (document, fromSource) => {
     getSharedShapeStyles(document, fromSource);
     getSharedTextStyles(document, fromSource);
-    console.log(sharedStyles);
     return sharedStyles;
 }
 
