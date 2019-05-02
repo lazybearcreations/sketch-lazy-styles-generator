@@ -1,6 +1,6 @@
 {
   "name": "lazy-styles-generator",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "Generate shared layer and text styles using the name of the selected layer as the name of the generated style.",
   "homepage": "https://github.com/lazybearcreations/sketch-lazy-styles-generator#readme",
   "keywords": [
