@@ -76,16 +76,17 @@ const addTextStyle = (document, layer) => {
 
 }
 
-const updateStyle = (sharedStyle, newStyle) => {
-    return sharedStyle.style = newStyle;
+const updateStyle = (sharedStyle, layer) => {
+    sharedStyle.name = layer.name;
+    return sharedStyle.style = layer.style;
 }
 
-const updateShapeStyle = (sharedStyle, newStyle) => {
-    return updateStyle(sharedStyle, newStyle);
+const updateShapeStyle = (sharedStyle, layer) => {
+    return updateStyle(sharedStyle, layer);
 }
 
-const updateTextStyle = (sharedStyle, newStyle) => {
-    return updateStyle(sharedStyle, newStyle);
+const updateTextStyle = (sharedStyle, layer) => {
+    return updateStyle(sharedStyle, layer);
 }
 
 const removeAllTextStyles = (document) => {

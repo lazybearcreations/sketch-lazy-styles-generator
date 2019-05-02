@@ -37,7 +37,7 @@ export default (contextNative) => {
                 let sharedStyle = SharedStyle.getSharedTextStyleById(layer.sharedStyleId, document);
 
                 if (Layer.hasSharedStyle(layer) && sharedStyle) {
-                    SharedStyle.updateStyle(sharedStyle, layer.style);
+                    SharedStyle.updateStyle(sharedStyle, layer);
                     Counter.updateCounter('updated', 1);
                     return;
                 }
@@ -51,7 +51,7 @@ export default (contextNative) => {
                 let sharedStyle = SharedStyle.getSharedShapeStyleById(layer.sharedStyleId, document);
 
                 if (Layer.hasSharedStyle(layer) && sharedStyle) {
-                    SharedStyle.updateStyle(sharedStyle, layer.style);
+                    SharedStyle.updateStyle(sharedStyle, layer);
                     Counter.updateCounter('updated', 1);
                     return;
                 }
